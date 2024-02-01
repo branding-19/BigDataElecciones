@@ -41,78 +41,78 @@ En la migración del proyecto a una aplicación basada en MongoDB, se buscó gar
 La consulta en 3T, se aprovechó la interfaz intuitiva y amigable de 3T para interactuar con la base de datos MongoDB. La herramienta facilitó la visualización y exploración de los datos en tiempo real, permitiendo una comprensión más rápida de la estructura de las colecciones . Además, la capacidad de ejecutar y depurar consultas directamente en 3T contribuyó significativamente a la eficiencia en el desarrollo y ajuste de la consulta de agregación.
 ### Aplicaciones implementadas
 Entre las aplicaciones implementadas para el funcionamiento de la base de datos tenemos las siguientes:
-*  **### MongoDB:** es una base de datos NoSQL (orientada a documentos) que se basa en el formato BSON (Binary JSON). A diferencia de las bases de datos relacionales, MongoDB no utiliza tablas y filas, sino que almacena los datos en documentos BSON dentro de colecciones. Cada documento BSON es una estructura de datos JSON codificada en binario, y las colecciones son grupos de documentos.
+*  **MongoDB:** es una base de datos NoSQL (orientada a documentos) que se basa en el formato BSON (Binary JSON). A diferencia de las bases de datos relacionales, MongoDB no utiliza tablas y filas, sino que almacena los datos en documentos BSON dentro de colecciones. Cada documento BSON es una estructura de datos JSON codificada en binario, y las colecciones son grupos de documentos.
 * **MongoDB Atlas:** MongoDB Atlas es el servicio de base de datos en la nube ofrecido por MongoDB, Inc. Proporciona una forma fácil de implementar y administrar clústeres de MongoDB en la nube, sin la necesidad de configurar y mantener la infraestructura de la base de datos. MongoDB Atlas ofrece escalabilidad, seguridad y herramientas integradas para monitorear y respaldar la base de datos en la nube.
 * **MongoDB Compass:** MongoDB Compass es una interfaz gráfica de usuario (GUI) para MongoDB que permite a los desarrolladores y administradores visualizar y manipular los datos almacenados en sus bases de datos MongoDB. Compass proporciona una forma intuitiva de explorar y consultar los datos, así como de realizar tareas de administración, como la creación de índices y la optimización de consultas.
 * **Studio 3T:** Studio 3T es otra interfaz gráfica de usuario para MongoDB, similar a MongoDB Compass, pero con algunas características adicionales. Permite a los usuarios explorar y manipular sus bases de datos MongoDB de manera visual. Studio 3T también proporciona funcionalidades avanzadas, como la capacidad de escribir consultas en formato SQL y convertirlas automáticamente a consultas de MongoDB, así como herramientas de importación y exportación de datos.
-#Descripcion del Proyecto
-#Descripcion de la Base de datos No relacional
-##Colecciones
+# Descripcion del Proyecto
+# Descripcion de la Base de datos No relacional
+## Colecciones
 
-###Candidatos:
+### Candidatos:
 Colección donde se describe información relevante al candidato y además 
 haciendo referencia a la colección personas para saber quien es: 
 ![](https://github.com/branding-19/BigDataElecciones/blob/main/Candidatos.jpg?raw=true)
 
-###DistritosElectorales
+### DistritosElectorales
 Solo contendrá el nombre del distrito ya que con la ayuda de 
 referencias tendrá mas datos gracias a otras colecciones que hacen referencia a esta.
 ![](https://github.com/branding-19/BigDataElecciones/blob/main/DistrtitosElectorales.jpg?raw=true)
 
-###Donaciones
+### Donaciones
 Ls donaciones que tienen el propósito de financiar las actividades y 
 operaciones del partido. Se contendrá datos primordiales y referencia al partido.
 ![](https://github.com/branding-19/BigDataElecciones/blob/main/Donaciones.jpg?raw=true)
 
-###Financiamientos
+### Financiamientos
 Para esta colección en si ase referencia  contribuciones financieras
 recibidas por los candidatos y partidos políticos durante la campaña.
 ![](https://github.com/branding-19/BigDataElecciones/blob/main/Financiamientos.jpg?raw=true)
 
-###MesasElectorales
+### MesasElectorales
 Para esta colección nos queremos referir sobres las mesa electorales que posee cada recinto de cada distrito y de cada provincia, por eso serian solo esos pocos datos ya que con la referencia miembros no hay la necesidad de ir escribiendo el nombre del encargado y sus datos. O también sus votantes asignados.
 ![](https://github.com/branding-19/BigDataElecciones/blob/main/MesasElectorales.jpg?raw=true)
 
-###MiembrosMesas
+### MiembrosMesas
 Esta colección trata sobre las personas designadas en participar en mesas electorales en las cuales tendrán una referencia también a la colección personas para evitar escribir nuevamente sus datos personales, ademas también todos los datos que debe tener un miembro de mesa.
 ![](https://github.com/branding-19/BigDataElecciones/blob/main/Miembros%20Mesas.jpg?raw=true)
 
-###PartidosPoliticos
+### PartidosPoliticos
 Colección destinada al registro de partidos políticos participantes en las elecciones, su nombre, candidatos, periodos que participaron, etc.
 ![](https://github.com/branding-19/BigDataElecciones/blob/main/PartidoPolitico.jpg?raw=true)
 
-###Personas
+### Personas
 Colección padre referenciando a cada persona participante de esta base de datos, aquí en esta colección no tendrá ningún rango de cargo y demás,todas las personas involucradas en el proceso estarán aquí con sus datos primordiales.
 ![](https://github.com/branding-19/BigDataElecciones/blob/main/Personas.jpg?raw=true)
 
-###Propuestas
+### Propuestas
 Para esta colección quise ponerla de esta manera para así diferenciar cada propuesta presidencial para su régimen de gobierno, para eso describo lo que trata y su área que va estar destinada.
 ![](https://github.com/branding-19/BigDataElecciones/blob/main/Propuestas.jpg?raw=true)
 
-###Provincias
+### Provincias
 Colección que servirá como medio para ir diferenciando cada uno de los votos que tuvo cada provincia del país, para eso después tenemos la colección distritos que luego hace referencia con esta.
 ![](https://github.com/branding-19/BigDataElecciones/blob/main/Provincia.jpg?raw=true)
 
-###Recintos
+### Recintos
 Colección dedicada para el registro de sedes electorales donde van a estar 
 mesas electorales donde van a estar ubicados los votantes que van a realizar ese proceso.
 ![](https://github.com/branding-19/BigDataElecciones/blob/main/Recintos.jpg?raw=true)
 
-###Resultados Votos
+### Resultados Votos
 Colección donde puedo ver los votos totales, nulos y el partido que 
 gano dentro de todo un recinto.
 ![](https://github.com/branding-19/BigDataElecciones/blob/main/ResultadosVotos.jpg?raw=true)
 
-###Votantes
+### Votantes
 Colección que servirá para reconocer los derechos que tiene la persona que daría el voto, además también para ver si tendrá la necesidad de votar o no.
 ![](https://github.com/branding-19/BigDataElecciones/blob/main/Votantes.jpg?raw=true)
 
 =============
 
-###DESARROLLO
+### DESARROLLO
 Elecciones Precidenciales realizadas en mongodb ofrece una estructura flexible ya que gestina los datos de manera eficiente.
 
-###CONSULTAS DEL PROYECTO
+### CONSULTAS DEL PROYECTO
 1. Obtener la cantidad total de votos emitidos en cada recinto electoral durante las elecciones presidenciales.
 
 **db.MesasElectorales.aggregate([
