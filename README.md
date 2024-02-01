@@ -1,7 +1,6 @@
 ![](https://itq.edu.ec/wp-content/uploads/2023/02/Recurso-6.png)
 
 |Cargo | Docente | 
-| ---  | ---     |
 | Nombre | ING. Sebastián Landázuri |
 | Asignatura | Base de Datos no Relacionales |
 | Carrera | Desarrollo de Software | Nivel: Tercer Nivel |
