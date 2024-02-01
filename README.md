@@ -1,8 +1,8 @@
 ![](https://itq.edu.ec/wp-content/uploads/2023/02/Recurso-6.png)
 
 |Datos | |
-| ---  | ---     |  
-| Nombre | ING. Sebastián Landázuri |
+| ---  | ---  |  
+| Ingeniero | Sebastián Landázuri |
 | Asignatura | Base de Datos no Relacionales |
 | Carrera | Desarrollo de Software | Nivel: Tercer Nivel |
 | Estudiantes | Anthony Lanchi, Brandon Naula, Mayuri Rivadeneira |
