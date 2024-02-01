@@ -48,7 +48,9 @@ Entre las aplicaciones implementadas para el funcionamiento de la base de datos 
 * **MongoDB Compass:** MongoDB Compass es una interfaz gráfica de usuario (GUI) para MongoDB que permite a los desarrolladores y administradores visualizar y manipular los datos almacenados en sus bases de datos MongoDB. Compass proporciona una forma intuitiva de explorar y consultar los datos, así como de realizar tareas de administración, como la creación de índices y la optimización de consultas.
 * **Studio 3T:** Studio 3T es otra interfaz gráfica de usuario para MongoDB, similar a MongoDB Compass, pero con algunas características adicionales. Permite a los usuarios explorar y manipular sus bases de datos MongoDB de manera visual. Studio 3T también proporciona funcionalidades avanzadas, como la capacidad de escribir consultas en formato SQL y convertirlas automáticamente a consultas de MongoDB, así como herramientas de importación y exportación de datos.
 # Descripcion del Proyecto
+
 # Descripcion de la Base de datos No relacional
+El proyecto tiene como objetivo diseñar y desarrollar una base de datos no relacional para gestionar información relacionada con elecciones presidenciales. Este sistema permitirá almacenar y consultar datos clave asociados con candidatos, votantes, resultados electorales, donaciones de campaña y otros elementos relevantes a un proceso electoral.
 ## Colecciones
 
 ### Candidatos:
