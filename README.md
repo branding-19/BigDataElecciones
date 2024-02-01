@@ -4,7 +4,7 @@
 | ---  | ---  |  
 | Ingeniero | Sebastián Landázuri |
 | Asignatura | Base de Datos no Relacionales |
-| Carrera | Desarrollo de Software | 
+| carerras | Desarrollo de Software | 
 | Nivel: | Tercer Nivel |
 | Estudiantes | Anthony Lanchi, Brandon Naula, Mayuri Rivadeneira |
 
