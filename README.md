@@ -13,11 +13,6 @@ Estudiantes | Anthony Lanchi, Brandon Naula, Mayuri Rivadeneira |
 ![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
 
 
-**Tabla de Contenido**
-
-[TOCM]
-
-[TOC]
 
 #Introduccion
 El presente informe retrara sobre como gestionar el proyecto desarrollado sobre base de datos no relacional. En el cual como podemos visualizar trata sobre la adminstracion de datos relacionados con elecciones precidenciales 
@@ -119,6 +114,7 @@ Elecciones Precidenciales realizadas en mongodb ofrece una estructura flexible y
 
 ###CONSULTAS DEL PROYECTO
 1. Obtener la cantidad total de votos emitidos en cada recinto electoral durante las elecciones presidenciales.
+
 **db.MesasElectorales.aggregate([
 {
 $project: {
@@ -129,6 +125,7 @@ cantidad_votantes: { $size: "$votantes_id" }
 ])**
 
 2. Encuentra el partido político que obtuvo el mayor número de votos en un distrito específico.
+   
 **db.ResultadosVotos.aggregate([
 {
 $match: {
@@ -147,6 +144,7 @@ total_votos: 1
 ]);**
 
 3. Calcula el promedio de donaciones recibidas por cada partido político durante la campaña.
+
 **db.Donaciones.aggregate([
 {
 $group: {
@@ -164,7 +162,9 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 }
 ]);**
 
+
 4. Identifica los votantes que participaron en más de una elección presidencial y muestra su información demográfica.
+   
 **db.Votantes.aggregate([
   {
     $lookup: {
@@ -195,6 +195,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 5. Determina el recinto electoral con la mayor participación de votantes en un determinado distrito.
+
 **db.Recintos.aggregate([
  {
     $lookup: {
@@ -231,6 +232,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 6. Encuentra el candidato con más votos para una provincia en específico.
+   
 **db.ResultadoVotos.aggregate([
   {
     $lookup: {
@@ -269,6 +271,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 7. Obtén la cantidad total de votos válidos y nulos en cada elección presidencial.
+
 **db.ResultadosVotos.aggregate([
   {
     $group: {
@@ -287,8 +290,8 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
   }
 ])**
 
-
 8. Encuentra los distritos donde la diferencia de votos entre el partido ganador y el segundo partido fue menor a 5%.
+
 **db.ResultadosVotos.aggregate([
   {
     $addFields: {
@@ -325,6 +328,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 9. Calcula la cantidad total de donaciones realizadas por cada votante durante todas las campañas electorales.
+
 **db.Donaciones.aggregate([
   {
     $group: {
@@ -350,6 +354,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 10. Identifica a los miembros de mesa que han trabajado en más de tres elecciones presidenciales.
+
 **db.MiembrosMesa.aggregate([
   {
     $group: {
@@ -378,6 +383,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 11. Encuentra los candidatos que han participado en debates y el número de debates en los que estuvieron presentes.
+
 **db.Candidatos.aggregate([
   {
     $match: { "debates": { $exists: true, $ne: [] } }
@@ -392,6 +398,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 12. Determina la cantidad de votantes por rango de edad que participaron en una elección específica.
+
 **db.Votantes.aggregate([
   {
     $lookup: {
@@ -426,6 +433,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 13. Calcula el porcentaje de votos obtenido por cada partido político en una elección particular.
+
 **db.ResultadosVotos.aggregate([
   {
     $group: {
@@ -451,6 +459,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 14. Identifica los recintos electorales donde se han registrado irregularidades en los conteos.
+
 **db.ResultadosVotos.aggregate([
   {
     $match: {
@@ -476,6 +485,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 15. Encuentra los votantes que no han participado en ninguna elección presidencial.
+
 **db.Votantes.aggregate([
   {
     $lookup: {
@@ -506,6 +516,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 16. Calcula la cantidad total de papeletas emitidas por cada votante en una elección específica.
+
 **db.Votantes.aggregate([
   {
     $lookup: {
@@ -529,6 +540,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 17. Obtén la cantidad de votos por cada candidato y partido político en una elección, ordenados por el número de votos descendente.
+
 **db.ResultadosVotos.aggregate([
   {
     $lookup: {
@@ -563,6 +575,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 18. Encuentra los candidatos que han ganado en al menos dos elecciones presidenciales.
+
 **db.ResultadosVotos.aggregate([
   {
     $lookup: {
@@ -610,6 +623,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 19. Identifica los distritos con la menor participación de votantes en una elección específica.
+
 **db.Recintos.aggregate([
   {
     $lookup: {
@@ -646,6 +660,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 20. Calcula la diferencia promedio de votos entre el partido ganador y el segundo partido en todas las elecciones.
+
 **db.ResultadosVotos.aggregate([
   {
     $group: {
@@ -662,6 +677,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 21. Encuentra los votantes que han donado más del 10% de su ingreso total durante las campañas electorales.
+
 **db.Donaciones.aggregate([
   {
     $lookup: {
@@ -741,6 +757,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 23. Identifica los candidatos que han cambiado de partido político entre elecciones presidenciales.
+
 **db.Candidatos.aggregate([
   {
     $group: {
@@ -769,6 +786,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 24. Calcula la cantidad de votos nulos por recinto electoral en una elección específica.
+
 **db.ResultadosVotos.aggregate([
   {
     $match: { votos_nulos: { $gt: 0 } }
@@ -792,6 +810,7 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ])**
 
 25. Encuentra los distritos donde la participación de votantes fue superior al promedio durante todas las elecciones.
+
 **db.Recintos.aggregate([
   {
     $lookup: {
