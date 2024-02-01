@@ -165,8 +165,8 @@ promedio_donaciones: { $divide: ["$total_monto", "$total_donaciones"] }
 ]);**
 
 4. Identifica los votantes que participaron en más de una elección presidencial y muestra su información demográfica.
-db.Votantes.aggregate([
-**  {
+**db.Votantes.aggregate([
+  {
     $lookup: {
       from: "Personas",
       localField: "persona_id",
@@ -195,8 +195,8 @@ db.Votantes.aggregate([
 ])**
 
 5. Determina el recinto electoral con la mayor participación de votantes en un determinado distrito.
-db.Recintos.aggregate([
- ** {
+**db.Recintos.aggregate([
+ {
     $lookup: {
       from: "MesasElectorales",
       localField: "_id",
@@ -231,7 +231,7 @@ db.Recintos.aggregate([
 ])**
 
 6. Encuentra el candidato con más votos para una provincia en específico.
-*db.ResultadoVotos.aggregate([
+**db.ResultadoVotos.aggregate([
   {
     $lookup: {
       from: "PartidosPoliticos",
@@ -269,7 +269,8 @@ db.Recintos.aggregate([
 ])**
 
 7. Obtén la cantidad total de votos válidos y nulos en cada elección presidencial.
-**  {
+**db.ResultadosVotos.aggregate([
+  {
     $group: {
       _id: "$_id",
       totalVotosValidos: { $sum: "$votos_ganador" },
@@ -285,6 +286,7 @@ db.Recintos.aggregate([
     }
   }
 ])**
+
 
 8. Encuentra los distritos donde la diferencia de votos entre el partido ganador y el segundo partido fue menor a 5%.
 **db.ResultadosVotos.aggregate([
@@ -376,8 +378,7 @@ db.Recintos.aggregate([
 ])**
 
 11. Encuentra los candidatos que han participado en debates y el número de debates en los que estuvieron presentes.
-**[22:57] ANTHONY EMILIO LANCHI BENITEZ
-db.Candidatos.aggregate([
+**db.Candidatos.aggregate([
   {
     $match: { "debates": { $exists: true, $ne: [] } }
   },
@@ -707,34 +708,6 @@ db.Candidatos.aggregate([
 ])**
 
 22. Determina la cantidad de encuestas realizadas por cada partido político durante una campaña específica.
-**db.Candidatos.aggregate([
-  {
-    $group: {
-      _id: "$persona",
-      partidos: { $addToSet: "$partido_politico" }
-    }
-  },
-  {
-    $match: { $expr: { $gt: [{ $size: "$partidos" }, 1] } }
-  },
-  {
-    $lookup: {
-      from: "Personas",
-      localField: "_id",
-      foreignField: "_id",
-      as: "personaInfo"
-    }
-  },
-  {
-    $project: {
-      _id: 0,
-      candidato: "$personaInfo.nombre_completo",
-      partidos: 1
-    }
-  }
-])**
-
-23. Identifica los candidatos que han cambiado de partido político entre elecciones presidenciales.
 **db.Encuestas.aggregate([
   {
     $lookup: {
@@ -763,6 +736,34 @@ db.Candidatos.aggregate([
       _id: 0,
       partido: "$partidoInfo.nombre",
       totalEncuestas: 1
+    }
+  }
+])**
+
+23. Identifica los candidatos que han cambiado de partido político entre elecciones presidenciales.
+**db.Candidatos.aggregate([
+  {
+    $group: {
+      _id: "$persona",
+      partidos: { $addToSet: "$partido_politico" }
+    }
+  },
+  {
+    $match: { $expr: { $gt: [{ $size: "$partidos" }, 1] } }
+  },
+  {
+    $lookup: {
+      from: "Personas",
+      localField: "_id",
+      foreignField: "_id",
+      as: "personaInfo"
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      candidato: "$personaInfo.nombre_completo",
+      partidos: 1
     }
   }
 ])**
