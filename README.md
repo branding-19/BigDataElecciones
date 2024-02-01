@@ -1,6 +1,6 @@
 ![](https://itq.edu.ec/wp-content/uploads/2023/02/Recurso-6.png)
 
-|Cargo | Docente | 
+|Datos |  
 | ---  | ---     |  
 | Nombre | ING. Sebastián Landázuri |
 | Asignatura | Base de Datos no Relacionales |
