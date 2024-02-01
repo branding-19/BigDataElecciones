@@ -14,7 +14,7 @@ Estudiantes | Anthony Lanchi, Brandon Naula, Mayuri Rivadeneira |
 
 
 
-#Introduccion
+###Introduccion
 El presente informe retrara sobre como gestionar el proyecto desarrollado sobre base de datos no relacional. En el cual como podemos visualizar trata sobre la adminstracion de datos relacionados con elecciones precidenciales 
 Ya que por lo general este tema comprende ciertos aspectos muy importantes sobre el ambiente politico que vivimos hoy en dia. Ademas como cabe recalcar el proyecto nos brindara una idea mas clara como estudiantes induciendonos en el mundo de las base de datos no relacionales. Y fomentara nuestros conocimientos de desarrollador sobre este tema que estamos viendo. Esperamos que el usuario al interactuar con la base de datos, no tenga ningun inconveniente al momento de vizuzalisar cada dato, coleccion o atributo que este revisando y ademas tenga una idea clara de cada dato.
 #Objetivos
